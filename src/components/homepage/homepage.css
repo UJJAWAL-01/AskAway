@@ -1,0 +1,52 @@
+/* HomePage.css */
+
+.homepage-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  
+  .classrooms,
+  .forum,
+  .post-doubt {
+    flex: 1;
+    padding: 20px;
+    margin-right: 20px; /* Add spacing between columns */
+    background-color: #f2f2f2; /* Adjust background colors as needed */
+  }
+
+  .forum {
+    flex: 2; /* Adjust the width of the middle column as needed */
+  }
+
+
+  .doubt-container {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
