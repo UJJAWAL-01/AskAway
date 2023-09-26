@@ -1,9 +1,10 @@
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-import React, { useState } from "react";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import HomePage from "./components/homepage/Homepage";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light"); // Whether dark mode is enabled or not
@@ -20,30 +21,28 @@ function App() {
     }
   };
 
-  // Define a function to set text color based on the mode
-  const getTextColor = () => {
-    return mode === "dark" ? "white" : "black";
-  };
-
   return (
     <>
-      <Navbar
-        title="AskAway"
-        aboutText="About us"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
+      <BrowserRouter>
+        <Navbar
+          title="AskAway"
+          aboutText="About us"
+          mode={mode}
+          toggleMode={toggleMode}
+        />
 
-      {/* Set inline style for Login component */}
-      <Login style={{ color: getTextColor() }} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/homepage" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
 
-      {/* Set inline style for Register component */}
-      <Register style={{ color: getTextColor() }} />
-
-      <HomePage/>
+      {/* <Login />
+      <Register/>
+      <HomePage/> */}
     </>
-
-  
   );
 }
 

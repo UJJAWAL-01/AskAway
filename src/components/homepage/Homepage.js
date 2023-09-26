@@ -23,21 +23,25 @@ function HomePage() {
       <div className="homepage-container">
         <div className="classrooms">
           <h2>Classrooms</h2>
-          <ul>
-            {classrooms.map((classroom, index) => (
-              <li key={index}>{classroom}</li>
-            ))}
-          </ul>
+          {classrooms.map((classroom, index) => (
+            <div className="classroom-tile" key={index}>
+              {classroom}
+            </div>
+          ))}
         </div>
-        <div className="forum">
-          <div className="doubt-container">
-            <h2>Doubts</h2>
-            <ul>
-              {doubts.map((doubt, index) => (
-                <li key={index}>{doubt}</li>
-              ))}
-            </ul>
+
+        
+          <div className="forum">
+            <div className="doubt-container">
+              <h2>Doubts</h2>
+              <ul>
+                {doubts.map((doubt, index) => (
+                  <li key={index}>{doubt}</li>
+                ))}
+              </ul>
+            </div>
           </div>
+
           <div className="post-doubt">
             <h2>Post a Doubt</h2>
             <textarea
@@ -45,9 +49,9 @@ function HomePage() {
               value={newDoubt}
               onChange={(e) => setNewDoubt(e.target.value)}
             />
-            <button onClick={handleDoubtSubmit}>Post</button>
+            <button onClick={handleDoubtSubmit} type="submit">Post</button>
           </div>
-        </div>
+        
       </div>
     </>
   );
