@@ -5,15 +5,21 @@
     justify-content: space-between;
     /* padding: 20px;
     flex-direction: row; */
+    height: 600px;
   }
+
 
 .classrooms {
   
-  background-color: #8aa6ad; /* Background color of the classroom container */
-  border-radius: 15px; /* Rounded edges */
+  background-color: #cadcef; 
+  border-radius: 15px; 
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  flex: 1; /* Adjust the width of the left column */
+  height: 100%;
+  margin-left: 1%;
 }
+
 
 /* Style for individual classroom tiles */
 .classroom-tile {
@@ -22,31 +28,55 @@
   padding: 10px;
   margin: 10px 0; /* Add some space between tiles */
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow to tiles */
+  cursor: pointer; /* Add a pointer on hover */
+  transition: 0.3s; /* Add transition on hover */
+  width: 100%;
+  font-size: medium;
+  font-style: bold;
+  /* text-align: center; */
+}
+
+.doubt-tile{
+  background-color: #fff; /* Background color of each tile */
+  border-radius: 10px; /* Rounded edges for tiles */
+  padding: 10px;
+  margin: 10px 0; /* Add some space between tiles */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow to tiles */
+  cursor: pointer; /* Add a pointer on hover */
+  transition: 0.3s; /* Add transition on hover */
+  width: 100%;
+  font-size: medium;
+  font-style: bold;
+
 }
 
   .post-doubt {
     flex: 2;
     padding: 20px;
     margin-right: 20px; /* Add spacing between columns */
-    background-color: #dbdfaf; /* Adjust background colors as needed */
+    background-color: #90b8e1; /* Adjust background colors as needed */
     width: 25em;
+    height: 18rem;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     align-items: right;
+    color:black;
   }
 
   .forum {
-    flex: 4; /* Adjust the width of the middle column as needed */
+    flex: 5; /* Adjust the width of the middle column as needed */
   }
 
 
   .doubt-container {
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #9c8c8c;
+    background-color: #d0c3c3;
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    margin: 3%;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: 100%;
   }
   
   ul {
@@ -57,23 +87,38 @@
   
   textarea {
     width: 100%;
-    height: 100px;
+    height: 50px;
     resize: none;
     margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+
+    
+
+    
   }
   
   button {
-    background-color: #007bff;
-    color: white;
+    background-color: #eff0f0;
+    color: black;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
     width: fit-content;
     height: fit-content;
+    align-items: center;
   }
   
   button:hover {
     background-color: #0056b3;
   }
   
+  .solution-icon{
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    align-items: flex-end;
+  }

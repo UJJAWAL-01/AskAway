@@ -60,7 +60,7 @@ export default function Navbar(props) {
             </div>
             
                 <Link className="nav-link" to="/login">
-                <button className="my-button" > Login </button>
+                  <button className="my-button" > Login </button>
                 </Link>
 
           </div>
