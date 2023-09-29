@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./homepage.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment } from "@fortawesome/free-solid-svg-icons"; // Import the specific icon you want to use
+import { faComment } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 function HomePage() {
   const [classrooms, setClassrooms] = useState([
@@ -12,11 +13,13 @@ function HomePage() {
     "Software Engineering",
     "Operating Systems",
     "Computer Networks",
+    
   ]);
 
   const [doubts, setDoubts] = useState([]);
   const [newDoubt, setNewDoubt] = useState("");
   const [answers, setAnswers] = useState({});
+  const [submittedAnswers, setSubmittedAnswers] = useState({});
 
   const handleDoubtSubmit = () => {
     if (newDoubt.trim() !== "") {
@@ -29,6 +32,14 @@ function HomePage() {
   const handleAnswerChange = (doubt, answer) => {
     // Update the answer for the specified doubt
     setAnswers({ ...answers, [doubt]: answer });
+  };
+
+  const handleAnswerSubmit = (doubt) => {
+    const answer = answers[doubt];
+    // Perform actions to submit the answer (e.g., send it to the server)
+    // You can add your logic here to handle the submission
+    console.log(`Submitting answer for doubt: ${doubt}`);
+    setSubmittedAnswers({ ...submittedAnswers, [doubt]: answer });
   };
 
   return (
@@ -57,12 +68,21 @@ function HomePage() {
                     className="solution-icon"
                   />
                 </div>
-                {answers[doubt] !== undefined && (
-                  <textarea
-                    placeholder="Type your answer here..."
-                    value={answers[doubt]}
-                    onChange={(e) => handleAnswerChange(doubt, e.target.value)}
-                  />
+                <textarea
+                  placeholder="Type your answer here..."
+                  value={answers[doubt]}
+                  onChange={(e) => handleAnswerChange(doubt, e.target.value)}
+                />
+                <button
+                  className="submit-answer"
+                  onClick={() => handleAnswerSubmit(doubt)}
+                >
+                  <FontAwesomeIcon icon={faCheckCircle} /> Submit
+                </button>
+                {submittedAnswers[doubt] && (
+                  <div className="submitted-answer">
+                    <strong>Your Answer:</strong> {submittedAnswers[doubt]}
+                  </div>
                 )}
               </div>
             ))}
