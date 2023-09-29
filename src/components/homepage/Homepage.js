@@ -48,7 +48,7 @@ function HomePage() {
         <div className="classrooms">
           <h2>Classrooms</h2>
           {classrooms.map((classroom, index) => (
-            <Link className="nav-link" to="/login" key={index}>
+            <Link className="nav-link" to="/" key={index}>
               <div className="classroom-tile">{classroom}</div>
             </Link>
           ))}
@@ -61,13 +61,14 @@ function HomePage() {
               <div className="doubt-tile" key={index}>
                 <div>
                   Question: {doubt}
-                  <FontAwesomeIcon
+                  {/* <FontAwesomeIcon
                     icon={faComment}
                     bounce
                     size="2xs"
                     className="solution-icon"
-                  />
+                  /> */}
                 </div>
+                <div className="answer-container">
                 <textarea
                   placeholder="Type your answer here..."
                   value={answers[doubt]}
@@ -79,6 +80,7 @@ function HomePage() {
                 >
                   <FontAwesomeIcon icon={faCheckCircle} /> Submit
                 </button>
+                </div>
                 {submittedAnswers[doubt] && (
                   <div className="submitted-answer">
                     <strong>Your Answer:</strong> {submittedAnswers[doubt]}
