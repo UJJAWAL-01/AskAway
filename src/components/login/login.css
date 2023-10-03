@@ -32,4 +32,16 @@ button{
     margin-top: 1.75%;
 }
 
+.buttons-group{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 42% ;
+    margin-top: 2%;
+    /* border: 2px solid red; */
+}
+
     

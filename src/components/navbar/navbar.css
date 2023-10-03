@@ -3,15 +3,23 @@
     background-color: #007bff; /* Example background color */
     color: #fff; /* Text color */
     border: none;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    width: fit-content;
+  
   }
   
   .my-button:hover {
     background-color: #0056b3; /* Hover color */
   }
   
+  .my-button:active {
+    background-color: #0056b3; /* Active color */
+  }
+  
+  .container-fluid{
+    width: 95%;
+    /* border: 2px solid red; */
+  }

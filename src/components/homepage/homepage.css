@@ -1,79 +1,211 @@
-/* HomePage.css */
-
+/* Default styles for larger screens */
 .homepage-container {
-    display: flex;
-    justify-content: space-between;
-    /* padding: 20px;
-    flex-direction: row; */
-  }
+  display: flex;
+  justify-content: space-between;
+  height: 600px;
+  padding: 20px;
+  
+}
 
 .classrooms {
-  
-  background-color: #8aa6ad; /* Background color of the classroom container */
-  border-radius: 15px; /* Rounded edges */
+  background-color: #cadcef;
+  border-radius: 15px;
   padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  height: 100%;
+  width: 100%; /* Use 100% width for mobile devices */
+  margin-left: 1%;
+  margin-bottom: 5%;
+  max-height: 100%; /* Set a maximum height for the container */
+  overflow-y: auto; /* Add a vertical scrollbar when the content exceeds the height */
+  color: black;
+
 }
 
 /* Style for individual classroom tiles */
 .classroom-tile {
-  background-color: #fff; /* Background color of each tile */
-  border-radius: 10px; /* Rounded edges for tiles */
+  background-color: #fff;
+  border-radius: 10px;
   padding: 10px;
-  margin: 10px 0; /* Add some space between tiles */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow to tiles */
+  margin: 10px 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  font-size: medium;
+  font-style: bold;
+  margin-top: 5%;
+  color: black;
 }
 
+.classroom-tile:last-child {
+  margin-bottom: 0;
+}
+
+.doubt-tile {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 10px 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  /* cursor: pointer; */
+  transition: 0.3s;
+  width: 100%;
+  font-size: medium;
+  font-style: bold;
+  color: black;
+}
+
+.doubt-tile:last-child {
+  margin-bottom: 0;
+}
+
+.post-doubt {
+  flex: 2;
+  padding: 20px;
+  margin-right: 20px;
+  background-color: #90b8e1;
+  width: 100%; /* Use 100% width for mobile devices */
+  height: 50%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+.forum {
+  flex: 5;
+}
+
+.doubt-container {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #96d0f4;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 2%;
+  margin-right: 2%;
+  max-height: 100%; /* Set a maximum height for the container */
+  overflow-y: auto; /* Add a vertical scrollbar when the content exceeds the height */
+  color: black;
+  /* width: 100%; */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+textarea {
+  width: 100%;
+  height: 50px;
+  resize: none;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: medium;
+  margin-top: 2%;
+  color: black;
+  border: 0.5px solid #f3f3f3;
+}
+
+button {
+  background-color: #eff0f0;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 40%;
+  margin-right: 10px;
+
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.solution-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  align-items: flex-end;
+}
+
+/* Responsive styles for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .homepage-container {
+    flex-direction: column;
+    height: auto; /* Remove fixed height for mobile */
+  }
+
+  .classrooms,
   .post-doubt {
-    flex: 2;
-    padding: 20px;
-    margin-right: 20px; /* Add spacing between columns */
-    background-color: #dbdfaf; /* Adjust background colors as needed */
-    width: 25em;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    align-items: right;
+    flex: none; /* Remove flex for mobile to stack elements */
+    width: 100%; /* Make elements full-width on mobile */
+    margin: 0;
   }
 
-  .forum {
-    flex: 4; /* Adjust the width of the middle column as needed */
+  .classrooms{
+    margin-top: 5%;
+    width: 100%; /* Make elements full-width on mobile */
+    max-height: 200px; /* Set a maximum height for the containers */
+    overflow-y: auto; /* Add a vertical scrollbar when the content exceeds the height */
+
   }
-
-
   .doubt-container {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #9c8c8c;
-    border-radius: 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    margin: 3%;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
+    margin-top: 5%;
+    margin-left: 1px;
+    margin-right: 2px;
+
+    max-height: 200px; /* Set a maximum height for the containers */
+    overflow-y: auto; /* Add a vertical scrollbar when the content exceeds the height */
   }
 
-  
-  textarea {
-    width: 100%;
-    height: 100px;
-    resize: none;
-    margin-bottom: 10px;
+  .classroom-tile,
+  .doubt-tile {
+    width: auto; /* Auto width for mobile */
   }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    width: fit-content;
-    height: fit-content;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+/* homepage.css */
+
+/* Style for the answer container */
+.answer-container {
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  border-radius: 25px;
+  padding: 5px 15px;
+  margin-top: 10px;
+}
+
+/* Style for the textarea within the answer container */
+.answer-container textarea {
+  flex: 1;
+  border: none;
+  background: none;
+  resize: none;
+  font-size: 14px;
+  padding: 5px;
+
+}
+
+/* Style for the submit button within the answer container */
+.answer-container .submit-answer {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 16px;
+  color: #37e827; /* Blue color; change as needed */
+}
+
