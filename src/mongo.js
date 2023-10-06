@@ -1,6 +1,11 @@
+<<<<<<< HEAD
+const mongoose=require("mongoose")
+mongoose.connect("mongodb://0.0.0.0:27017/AskAway")
+=======
 const mongoose = require("mongoose")
 
 mongoose.connect("mongodb://0.0.0.0:27017/login")
+>>>>>>> 6bcc77b5afa8d10eafde7092d07d18f13039ca57
 .then(()=>{
     console.log("mongodb connected");
 })
