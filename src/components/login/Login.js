@@ -26,21 +26,21 @@ function Login() {
       <h1>Login</h1>
       <div className="loginForm">
         <form>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputEmail1">Email Id</label>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               id="exampleInputEmail"
               aria-describedby="emailHelp"
               placeholder="Enter email"
               onChange={(e) => setEmail(e.target.value)}
             />
-            <small id="emailHelp" class="form-text text-muted">
+            <small id="emailHelp" className="form-text text-muted">
               We'll never share your email with anyone else.
             </small>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input
               type="password"
@@ -53,11 +53,11 @@ function Login() {
         </form>
       </div>
       <div className="buttons-group">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
         <Link to="/register">
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Register
           </button>
         </Link>

@@ -1,13 +1,18 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
-const StudentModel = require('askaway/backend/models/StudentModel')
+// const StudentModel = require('./models/StudentModel')
 
 const app = express()
-app.use(express.json)
+app.use(express.json())
 app.use(cors())
 
 mongoose.connect("mongodb://127.0.0.1:27017/AskAway");
+
+app.get("/", (req,res) => {
+    console.log("gg")
+    res.send("Ujjawal gay hai")
+})
 
 app.post("/login", (req,res) => {
     const {email, password} = req.body;
@@ -34,6 +39,6 @@ app.post('/register', (req,res) => {
         .catch(err => res.json(err))
 })
 
-app.listen(3000, () => {
+app.listen(4000, () => {
     console.log("server is running")
 })

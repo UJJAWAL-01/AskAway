@@ -12,7 +12,6 @@ function HomePage() {
     "Software Engineering",
     "Operating Systems",
     "Computer Networks",
-    
   ]);
 
   const [doubts, setDoubts] = useState([]);
