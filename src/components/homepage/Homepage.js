@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./homepage.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment } from "@fortawesome/free-solid-svg-icons";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 function HomePage() {
@@ -59,27 +58,19 @@ function HomePage() {
             <h2>Doubts</h2>
             {doubts.map((doubt, index) => (
               <div className="doubt-tile" key={index}>
-                <div>
-                  Question: {doubt}
-                  {/* <FontAwesomeIcon
-                    icon={faComment}
-                    bounce
-                    size="2xs"
-                    className="solution-icon"
-                  /> */}
-                </div>
+                <div>Question: {doubt}</div>
                 <div className="answer-container">
-                <textarea
-                  placeholder="Type your answer here..."
-                  value={answers[doubt]}
-                  onChange={(e) => handleAnswerChange(doubt, e.target.value)}
-                />
-                <button
-                  className="submit-answer"
-                  onClick={() => handleAnswerSubmit(doubt)}
-                >
-                  <FontAwesomeIcon icon={faCheckCircle} /> Submit
-                </button>
+                  <textarea
+                    placeholder="Type your answer here..."
+                    value={answers[doubt]}
+                    onChange={(e) => handleAnswerChange(doubt, e.target.value)}
+                  />
+                  <button
+                    className="submit-answer"
+                    onClick={() => handleAnswerSubmit(doubt)}
+                  >
+                    <FontAwesomeIcon icon={faCheckCircle} /> Submit
+                  </button>
                 </div>
                 {submittedAnswers[doubt] && (
                   <div className="submitted-answer">
