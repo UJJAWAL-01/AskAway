@@ -19,6 +19,7 @@ function App() {
       setMode("light");
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
+      document.body.style.transition = "all 0.5s ease";
     }
   };
 

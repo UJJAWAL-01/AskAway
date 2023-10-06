@@ -1,53 +1,72 @@
-import React, { useEffect, useState } from "react"
-import axios from "axios"
-import { useNavigate, Link} from "react-router-dom"
-import "./login.css";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
+import "./login.css"
 
 
 function Login() {
-    const[email, setEmail] = useState()
-    const[password, setPassword] = useState()
-    const navigate = useNavigate()
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3000/login', {email,password})
-        .then(result => {
-          console.log(result)
-          if(result.data === "Success"){
-            navigate('/homepage')
-          }
-        })
-        .catch(err => console.log(err))
-    }
-    return (
-        <>
-            <h1>Login</h1>
-            <div className='loginForm'>
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email Id</label>
-                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            </div>
-            <div className='buttons-group'>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <Link  to="/register">
-              <button type="submit" class="btn btn-primary">Register</button>
-            </Link>
-            </div>
-        </>
-    )
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3000/login", { email, password })
+      .then((result) => {
+        console.log(result);
+        if (result.data === "Success") {
+          navigate("/homepage");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+  return (
+    <>
+      <h1>Login</h1>
+      <div className="loginForm">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email Id</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <small id="emailHelp" class="form-text text-muted">
+              We'll never share your email with anyone else.
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+        </form>
+      </div>
+      <div className="buttons-group">
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+        <Link to="/register">
+          <button type="submit" class="btn btn-primary">
+            Register
+          </button>
+        </Link>
+      </div>
+    </>
+  );
 }
 
-export default Login 
+export default Login;
 
 // function Login() {
 
@@ -84,7 +103,6 @@ export default Login
 //       }
 
 //   }
-
 
 //   return (
 //       <div className="login">
