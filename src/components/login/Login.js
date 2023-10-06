@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { useNavigate, Link} from "react-router-dom"
 import "./login.css";
-import { Link } from "react-router-dom";
+
 
 function Login() {
     const[email, setEmail] = useState()
@@ -37,16 +37,12 @@ function Login() {
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
-<<<<<<< HEAD
-=======
             <div className='buttons-group'>
             <button type="submit" class="btn btn-primary">Submit</button>
             <Link  to="/register">
               <button type="submit" class="btn btn-primary">Register</button>
             </Link>
             </div>
->>>>>>> 85d02f8ab0b355d031ca41437e56d48f5e530a1e
-            
         </>
     )
 }

@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
-const StudentModel = require('./models/student')
+const StudentModel = require('askaway/backend/models/StudentModel')
 
 const app = express()
 app.use(express.json)

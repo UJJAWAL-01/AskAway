@@ -1,4 +1,5 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose")
+
 mongoose.connect("mongodb://0.0.0.0:27017/login")
 .then(()=>{
     console.log("mongodb connected");
@@ -8,7 +9,7 @@ mongoose.connect("mongodb://0.0.0.0:27017/login")
 })
 
 
-const newSchema=new mongoose.Schema({
+const newSchema = new mongoose.Schema({
     email:{
         type:String,
         required:true
