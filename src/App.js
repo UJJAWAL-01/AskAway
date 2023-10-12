@@ -40,10 +40,6 @@ function App() {
           <Route path="/homepage" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
-
-      {/* <Login />
-      <Register/>
-      <HomePage/> */}
     </>
   );
 }

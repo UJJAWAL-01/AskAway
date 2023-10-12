@@ -18,7 +18,7 @@ function Register() {
         { name, Roll_no, email, password },
         {
           headers: {
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
           },
         }
       )
@@ -81,15 +81,17 @@ function Register() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
+          <div className="buttons-group">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+            <Link to="/login">
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
+            </Link>
+          </div>
         </form>
-        <Link to="/login">
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-        </Link>
       </div>
     </>
   );

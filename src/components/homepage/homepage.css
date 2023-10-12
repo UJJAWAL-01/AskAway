@@ -18,7 +18,8 @@
   margin-left: 1%;
   margin-bottom: 5%;
   max-height: 100%; /* Set a maximum height for the container */
-  overflow-y: auto; /* Add a vertical scrollbar when the content exceeds the height */
+  overflow-y: auto;
+  overflow-x: auto; /* Add a vertical scrollbar when the content exceeds the height */
   /* color: black; */
 
 }
@@ -72,6 +73,35 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   /* color: black; */
   outline: none;
+  
+}
+
+.right-coloum{
+  width: 24%;
+}
+
+.statistics-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid red; */
+  flex: 2;
+  padding: 20px;
+  margin-right: 20px;
+  background-color: #A9D7CB;
+  width: 100%; /* Use 100% width for mobile devices */
+  height: 45%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  /* color: black; */
+  outline: none;
+
+}
+
+.class-stat {
+  margin: 10px 0;
+  text-align: center;
 }
 
 .forum {
@@ -148,10 +178,13 @@ button:hover {
   }
 
   .classrooms,
-  .post-doubt {
+  .post-doubt,
+  .statistics-container {
     flex: none; /* Remove flex for mobile to stack elements */
     width: 100%; /* Make elements full-width on mobile */
     margin: 0;
+    max-height: 200px; /* Set a maximum height for the containers */
+    overflow-y: auto; 
   }
 
   .classrooms{
@@ -165,7 +198,6 @@ button:hover {
     margin-top: 5%;
     margin-left: 1px;
     margin-right: 2px;
-
     max-height: 200px; /* Set a maximum height for the containers */
     overflow-y: auto; /* Add a vertical scrollbar when the content exceeds the height */
   }
