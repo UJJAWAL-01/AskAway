@@ -12,10 +12,7 @@ function HomePage() {
   const [answers, setAnswers] = useState({});
   const [submittedAnswers, setSubmittedAnswers] = useState({});
 
-  const classStatistics = [
-    { className: "MERN Lab", totalDoubts: 10, answeredDoubts: 7 },
-    // Add more statistics as needed for other classes
-  ];
+  const [classStatistics, setClassStatistics] = useState()
 
   const handleDoubtSubmit = async () => {
     console.log("gg");
@@ -85,6 +82,22 @@ function HomePage() {
         setSubmittedAnswers(a);
       });
   }, []);
+  useEffect(() => {
+    fetch("http://localhost:3001/api/getData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        data['class'] = "Mern classroom";
+        let d = [data];
+        setClassStatistics(d);
+      });
+  }, [submittedAnswers]);
   return (
     <>
       <div className="homepage-container">
@@ -141,14 +154,13 @@ function HomePage() {
 
           <div className="statistics-container">
             <h2>Class Statistics</h2>
-            {classStatistics.map((stat, index) => (
+            {classStatistics && classStatistics.map((stat, index) => (
               <div className="class-stat" key={index}>
-                <div>Class: {stat.className}</div>
-                <div>Total Doubts: {stat.totalDoubts}</div>
-                <div>Answered Doubts: {stat.answeredDoubts}</div>
+                <div>Class: {stat.class}</div>
+                <div>Total Doubts: {stat.doubts}</div>
+                <div>Unanswered Doubts: {stat.unanswered}</div>
               </div>
             ))}
-            ;
           </div>
         </div>
       </div>

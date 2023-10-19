@@ -104,6 +104,22 @@ app.post("/register", (req, res) => {
     .catch((err) => res.json(err));
 });
 
+app.post("/api/getData", (req, res) => {
+  Doubt.find({}, { __v: 0 }).then((doubts) => {
+    nd = 0
+    na = 0
+    for(let i=0; i<doubts.length; i++){
+      if(doubts[i].answer === " "){
+        nd += 1
+        na += 1
+      }else{
+        nd += 1
+      }
+    }
+    res.json({doubts:nd, unanswered: na})
+  });
+});
+
 app.listen(3001, () => {
   console.log("server is running");
 });
